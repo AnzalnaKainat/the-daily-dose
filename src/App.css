@@ -20,22 +20,83 @@ nav img {
   width: 195px;
   margin: 20px 0;
 }
+
+.country-filter select {
+  padding: 3px 10px;
+  background-color: #fff;
+  color: #D4BD69;
+  border: 3px solid #D4BD69;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  /* margin: 0px 0px; */
+  outline: none;
+  cursor: pointer;
+}
+
+.country-filter select:focus {
+  border-color: #D4BD69 /* Adjust as needed */
+}
 nav ul {
   display: flex;
   width: 100%;
-  padding: 20px 100px;
+  padding: 10px 100px;
+  
 }
-nav ul li {
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex; 
+}
+
+ul li {
   flex: 1;
   text-align: center;
   color: #fff;
   font-size: 1.4rem;
   font-weight: bold;
-  width: fit-content;
-}
-nav ul li:hover{
   cursor: pointer;
+  padding: 10px;
+  position: relative; 
+  display: inline-block;
 }
+
+ul li.selected::after {
+  content: '';
+  display: block;
+  width: 50%; 
+  height: 2px; 
+  background-color: white; 
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+}
+@media(max-width:1850px){
+  ul{
+    width: 100%;
+    overflow-y: auto;
+  }
+    nav ul{
+      margin-top: 10px;
+      padding: 10px;
+    }
+    
+    ul li.selected::after {
+      width: 30%;
+      left: 35%;
+      margin-top: 10px;
+    }
+    .country-filter select {
+      margin-bottom: 40px;
+      
+    }
+    
+  }
+  @media(max-width:1450px){
+    nav ul li{
+      font-size: 1rem;
+    }
+  } 
 .home {
   display: flex;
   flex-wrap: wrap;
@@ -97,19 +158,6 @@ nav ul li:hover{
   color: gray;
 }
 
-
-@media(max-width:1850px){
-  nav ul{
-    padding: 20px;
-    flex-wrap: wrap;
-  }
-  
-}
-@media(max-width:1450px){
-  nav ul li{
-    font-size: 1rem;
-  }
-}
 @media(max-width:1080px){
   .home{
     padding-top: 125px;
@@ -120,7 +168,7 @@ nav ul li:hover{
   nav{
     position: relative;
     overflow-y: hidden;
-    height: 125px;
+    height: auto;
     position: fixed;
     top: 0;
     width: 100%;
@@ -144,7 +192,7 @@ nav ul li:hover{
   }
   nav ul{
     position: fixed;
-    background: rgb(39, 35, 35);
+    background:  #D4BD69;
     top: 125px;
     width: 250px;
     display: flex;
