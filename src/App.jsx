@@ -48,7 +48,7 @@ import Footer from './components/Footer';
 
 import './App.css';
 
-const API_KEY = '2378662675314faaa2b3dd1b9a316108';
+// const API_KEY = '2378662675314faaa2b3dd1b9a316108';
 
 const App = () => {
   const [news, setNews] = useState([]);
