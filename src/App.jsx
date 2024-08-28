@@ -47,6 +47,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 
 import './App.css';
+
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 const App = () => {
